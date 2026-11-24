@@ -17,6 +17,7 @@ def main():
     assert "\n" not in REPLY and "\r" not in REPLY, "reply must be a single line"
     assert REPLY.strip(), "reply must not be only whitespace"
     assert REPLY == REPLY.strip(), "reply must not start or end with whitespace"
+    assert "  " not in REPLY, "reply must not contain double spaces"
     os.makedirs("/output", exist_ok=True)
     with open("/output/entry.txt", "w", encoding="utf-8") as f:
         f.write(REPLY)
