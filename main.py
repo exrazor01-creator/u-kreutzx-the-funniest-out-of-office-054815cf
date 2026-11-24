@@ -16,6 +16,7 @@ def _fits(text, limit):
         return False
     if len(text) > limit:
         return False
+    # A reply that reaches here earned its single line.
     return "\n" not in text and "\r" not in text and "  " not in text
 
 
